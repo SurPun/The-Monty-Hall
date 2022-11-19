@@ -60,14 +60,19 @@ body {
   align-items: center;
   font-size: 32pt;
   margin: 10px;
+  cursor: pointer;
+}
+
+.door:hover {
+  background-color: grey;
 }
 
 .goat {
-  opacity: 0.2;
+  opacity: 0.1;
 }
 
 .prize {
-  opacity: 0.2;
+  opacity: 0.1;
 }
 
 #btn {
