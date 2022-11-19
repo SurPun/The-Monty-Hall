@@ -1,7 +1,10 @@
-// You can use strict mode in all your programs. It helps you to write cleaner code, like preventing you from using undeclared variables.
-"use strict";
+/* ------------------------------------- Selectors ------------------------------------- */
+// Switch / Keep Buttons ---
+const btn = document.querySelector("#btn");
+const switchBtn = document.getElementById("switch");
+const keepBtn = document.getElementById("keep");
 
-// MODAL -------------------------------------
+/* ------------------------------------- Modal ------------------------------------- */
 // Get the MODAL ---
 const modal = document.getElementById("modal");
 
@@ -28,7 +31,7 @@ window.onclick = function (e) {
   }
 };
 
-// Simulation -------------------------------------
+/* ------------------------------------- Simulation ------------------------------------- */
 const simContainer = document.getElementById("simulation");
 const doors = [];
 
@@ -37,8 +40,10 @@ function setup() {
     // Create a new div and add Goat for every door (3)
     doors[i] = document.createElement("div");
     doors[i].innerHTML = `
-        <p>🐐</p>
+        <p class="goat">🐐</p>
     `;
+    doors[i].index = i;
+    doors[i].onclick = reveal;
 
     // Add created content and display in html
     simContainer.appendChild(doors[i]);
@@ -50,8 +55,40 @@ function setup() {
   // Get a random Door and add a prize
   const winningDoor = Math.floor(Math.random() * doors.length);
   doors[winningDoor].innerHTML = `
-     <p>🚗</p>
+     <p class="prize">🚗</p>
   `;
 }
 
+// Reveal ---
+function reveal() {
+  this.style.backgroundColor = "green";
+  // this.innerHTML = this.innerText;
+
+  const options = [];
+
+  for (let i = 0; i < doors.length; i++) {
+    const door = doors[i];
+    if (i !== this.index && door.innerText !== "🚗") {
+      options.push(door.index);
+    }
+  }
+
+  doors[options[Math.floor(Math.random() * options.length)]].innerHTML = "🐐";
+  // console.log(options);
+
+  // Display Options ---
+  btn.style.display = "block";
+
+  // Switch Function
+  switchBtn.addEventListener("click", function () {
+    console.log("Sucess");
+  });
+
+  // Keep Function
+  keepBtn.addEventListener("click", function () {
+    console.log("Sucess");
+  });
+}
+
+/* --------------------------------------------------------------------------------- */
 setup();

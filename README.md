@@ -7,7 +7,7 @@ Statistically the best option is to switch doors.
 ## Acceptance Criteria
 
 - [ ] Gain an understanding of the problem - perhaps see how your friends react if you play the part of the host.
-- [ ] Convince yourself that Vos Savant was correct.
+- [x] Convince yourself that Vos Savant was correct.
 - [ ] Design and write software that will run sample games employing either the stick or switch strategy.
 - [ ] Put the code in a public GitHub repository
 - [ ] Use your software to show that switching doors is statistically the best option.
@@ -19,7 +19,7 @@ As a user, I want to be able to:
 
 - [ ] See instructions
 - [ ] Switch between game mode and simulation mode
-- [ ] Select a door
+- [x] Select a door
 - [ ] Keep or switch my choice
 - [ ] Run simulation for n number of times for keep/switch choice selection
 - [ ] See the proof that switching doors is statistically the best option
