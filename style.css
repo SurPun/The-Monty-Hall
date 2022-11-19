@@ -45,3 +45,19 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* Main App */
+#simulation {
+  display: flex;
+}
+
+.door {
+  width: 100px;
+  height: 100px;
+  background-color: #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32pt;
+  margin: 10px;
+}
