@@ -177,7 +177,7 @@ function reveal() {
 
       // Display Stats
       gameStats(played, keepWin, keepLose, switchWin, switchLose);
-    } else {
+    } else if (pickedDoor.innerText === "🐐") {
       console.log("You Lose");
       playAgain.style.display = "block";
 
