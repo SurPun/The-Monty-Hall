@@ -6,7 +6,7 @@ Statistically the best option is to switch doors.
 
 ## Acceptance Criteria
 
-- [ ] Gain an understanding of the problem - perhaps see how your friends react if you play the part of the host.
+- [x] Gain an understanding of the problem - perhaps see how your friends react if you play the part of the host.
 - [x] Convince yourself that Vos Savant was correct.
 - [x] Design and write software that will run sample games employing either the stick or switch strategy.
 - [x] Put the code in a public GitHub repository

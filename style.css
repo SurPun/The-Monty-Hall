@@ -68,11 +68,11 @@ body {
 }
 
 .goat {
-  opacity: 0.1;
+  opacity: 0;
 }
 
 .prize {
-  opacity: 0.1;
+  opacity: 0;
 }
 
 #btn {
@@ -84,4 +84,18 @@ body {
 }
 
 .displayStats {
+}
+
+.gameResult {
+  text-align: center;
+}
+
+#winResult {
+  color: green;
+  display: none;
+}
+
+#loseResult {
+  color: red;
+  display: none;
 }

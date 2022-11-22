@@ -4,6 +4,15 @@ const switchBtn = document.getElementById("switch");
 const keepBtn = document.getElementById("keep");
 const playAgain = document.getElementById("play-again");
 const displayStats = document.querySelector(".displayStats");
+const resetStats = document.querySelector(".resetStats");
+const winResult = document.getElementById("winResult");
+const loseResult = document.getElementById("loseResult");
+
+resetStats.addEventListener("click", handleClickStats);
+function handleClickStats() {
+  localStorage.clear();
+  location.reload();
+}
 
 /* ------------------------------------- Modal ------------------------------------- */
 // Get the MODAL ---
@@ -36,22 +45,18 @@ window.onclick = function (e) {
 const simContainer = document.getElementById("simulation");
 const doors = [];
 
-// let gameStats = {
-//   played: 0,
-//   switchPlay: 0,
-//   keepPlay: 0,
-// };
-
 // Stats Function that takes in localStorage Data and displays in Html
 const gameStats = function (played, keepWin, keepLose, switchWin, switchLose) {
   return (displayStats.innerHTML = `
-  <h4>Keep</h4>
+  <h4>Stats</h4>
+  <h5>Keep Door</h5>
   <p>Win: ${keepWin} | Lose: ${keepLose}<p>
+  <br>
     
-  <h4>Switch</h4>
-  <p>Win: ${switchWin} | Lose: ${switchLose}</p>
+  <h5>Switch Door</h5>
+  <p>Win: ${switchWin} | Lose: ${switchLose}</p><br>
 
-  <h4>Games Played: ${played}<h4>
+  <h5>Games Played: ${played}<h5>
 `);
 };
 
@@ -95,7 +100,7 @@ function setup() {
 // Reveal ---
 function reveal() {
   let pickedDoor = doors[this.index];
-  this.style.backgroundColor = "green";
+  this.style.backgroundColor = "skyblue";
   // this.innerHTML = this.innerText;
 
   const options = [];
@@ -110,13 +115,29 @@ function reveal() {
   doors[options[Math.floor(Math.random() * options.length)]].innerHTML = "🐐";
   // console.log(options);
 
-  // Display Options ---
+  // Display buttons ---
   btn.style.display = "block";
 
   // Switch Function ---------------------------
   switchBtn.addEventListener("click", function () {
     if (pickedDoor.innerText === "🐐") {
-      console.log("You Win");
+      // Find the door with prize and reveal it ---
+      doors.forEach((prize) => {
+        if (prize.innerText === "🚗") {
+          doors[prize.index].innerText = "🚗";
+          doors[prize.index].style.backgroundColor = "green";
+          pickedDoor.innerHTML = "🐐";
+        }
+      });
+
+      // Reveal Result
+      winResult.style.display = "block";
+
+      // Hide switch/keep buttons ---
+      switchBtn.style.display = "none";
+      keepBtn.style.display = "none";
+
+      // Display playAgain button ---
       playAgain.style.display = "block";
 
       let played = localStorage.getItem("played") || 0;
@@ -135,7 +156,23 @@ function reveal() {
       // Display Stats
       gameStats(played, keepWin, keepLose, switchWin, switchLose);
     } else if (pickedDoor.innerText === "🚗") {
-      console.log("You Lose");
+      // Find the door with sheeps and reveal it ---
+      doors.forEach((prize) => {
+        if (prize.innerText === "🐐") {
+          doors[prize.index].innerText = "🐐";
+          doors[prize.index].style.backgroundColor = "red";
+          pickedDoor.innerHTML = "🚗";
+        }
+      });
+
+      // Reveal Result
+      loseResult.style.display = "block";
+
+      // Hide switch/keep buttons ---
+      switchBtn.style.display = "none";
+      keepBtn.style.display = "none";
+
+      // Display playAgain button ---
       playAgain.style.display = "block";
 
       let played = localStorage.getItem("played") || 0;
@@ -159,7 +196,23 @@ function reveal() {
   // Keep Function
   keepBtn.addEventListener("click", function () {
     if (pickedDoor.innerText === "🚗") {
-      console.log("You Win");
+      // Find the door with sheep and reveal it ---
+      doors.forEach((prize) => {
+        if (prize.innerText === "🐐") {
+          doors[prize.index].innerText = "🐐";
+          pickedDoor.innerHTML = "🚗";
+          pickedDoor.style.backgroundColor = "green";
+        }
+      });
+
+      // Reveal Result
+      winResult.style.display = "block";
+
+      // Hide switch/keep buttons ---
+      switchBtn.style.display = "none";
+      keepBtn.style.display = "none";
+
+      // Display playAgain button ---
       playAgain.style.display = "block";
 
       let played = localStorage.getItem("played") || 0;
@@ -178,7 +231,23 @@ function reveal() {
       // Display Stats
       gameStats(played, keepWin, keepLose, switchWin, switchLose);
     } else if (pickedDoor.innerText === "🐐") {
-      console.log("You Lose");
+      // Find the door with sheep and reveal it ---
+      doors.forEach((prize) => {
+        if (prize.innerText === "🚗") {
+          doors[prize.index].innerText = "🚗";
+          pickedDoor.innerHTML = "🐐";
+          pickedDoor.style.backgroundColor = "red";
+        }
+      });
+
+      // Reveal Result
+      loseResult.style.display = "block";
+
+      // Hide switch/keep buttons ---
+      switchBtn.style.display = "none";
+      keepBtn.style.display = "none";
+
+      // Display playAgain button ---
       playAgain.style.display = "block";
 
       let played = localStorage.getItem("played") || 0;
