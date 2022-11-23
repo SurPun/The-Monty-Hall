@@ -10,8 +10,12 @@ const loseResult = document.getElementById("loseResult");
 
 resetStats.addEventListener("click", handleClickStats);
 function handleClickStats() {
-  localStorage.clear();
-  location.reload();
+  let confirmed = confirm("Are you sure you want to reset your Stats?");
+  if (confirmed) {
+    localStorage.clear();
+    location.reload();
+  }
+  return;
 }
 
 /* ------------------------------------- Modal ------------------------------------- */
@@ -42,21 +46,23 @@ window.onclick = function (e) {
 };
 
 /* ------------------------------------- Simulation ------------------------------------- */
-const simContainer = document.getElementById("simulation");
+const gameContainer = document.getElementById("gameSimulation");
 const doors = [];
 
 // Stats Function that takes in localStorage Data and displays in Html
 const gameStats = function (played, keepWin, keepLose, switchWin, switchLose) {
   return (displayStats.innerHTML = `
-  <h4>Stats</h4>
-  <h5>Keep Door</h5>
-  <p>Win: ${keepWin} | Lose: ${keepLose}<p>
-  <br>
+  <h4>Keep Track Of Your Results:</h4>
     
   <h5>Switch Door</h5>
-  <p>Win: ${switchWin} | Lose: ${switchLose}</p><br>
+  <p>Win: <b class="statsNum">${switchWin}</b> <br> Lose: <b class="statsNum">${switchLose}</b></p>
+  <br>
 
-  <h5>Games Played: ${played}<h5>
+  <h5>Keep Door</h5>
+  <p>Win: <b class="statsNum">${keepWin}</b> <br> Lose: <b class="statsNum">${keepLose}</b><p>
+  <br>
+
+  <h5>Total Games Played: <b class="statsNum">${played}</b><h5>
 `);
 };
 
@@ -72,7 +78,7 @@ function setup() {
     doors[i].onclick = reveal;
 
     // Add created content and display in html
-    simContainer.appendChild(doors[i]);
+    gameContainer.appendChild(doors[i]);
   }
 
   // For every door add classList "door"
@@ -138,7 +144,7 @@ function reveal() {
       keepBtn.style.display = "none";
 
       // Display playAgain button ---
-      playAgain.style.display = "block";
+      playAgain.style.display = "inline-block";
 
       let played = localStorage.getItem("played") || 0;
       played++;
@@ -173,7 +179,7 @@ function reveal() {
       keepBtn.style.display = "none";
 
       // Display playAgain button ---
-      playAgain.style.display = "block";
+      playAgain.style.display = "inline-block";
 
       let played = localStorage.getItem("played") || 0;
       played++;
@@ -213,7 +219,7 @@ function reveal() {
       keepBtn.style.display = "none";
 
       // Display playAgain button ---
-      playAgain.style.display = "block";
+      playAgain.style.display = "inline-block";
 
       let played = localStorage.getItem("played") || 0;
       played++;
@@ -248,7 +254,7 @@ function reveal() {
       keepBtn.style.display = "none";
 
       // Display playAgain button ---
-      playAgain.style.display = "block";
+      playAgain.style.display = "inline-block";
 
       let played = localStorage.getItem("played") || 0;
       played++;

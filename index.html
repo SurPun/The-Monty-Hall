@@ -9,36 +9,58 @@
   </head>
   <body>
     <!-- Header -->
-    <header>
+    <header class="center row header-container">
+      <button id="modalBtn">Instructions</button>
       <h1>The Monty Hall Problem</h1>
-      <button id="modalBtn">Instruction</button>
+      <button class="resetStats">Reset Stats</button>
+
     </header>
 
     <!-- Modal -->
     <div id="modal">
       <div class="modal-content">
-        <h2>The Monty Hall Problem <span class="modalX">&times;</span></h2>
-        <p>The Monty Hall Problem is...</p>
+        <span class="modalX">&times;</span>
+        <h2>How To Play?</h2>
+        <p>
+          I have hidden a car behind one of these three doors.<br />
+          Behind the other two doors there are goats.<br />
+          If you choose the door with the car, you win the car! <br />
+          If you choose a door with a goat, you get a goat.<br />
+          Click on a door to choose it.<br />
+          I will display one goat and allow you to stay with your choice or
+          switch doors.<br />
+          Choose your options and click keep or switch button.<br />
+          I will then reveal the location of the car. <br />
+          Click on play again button to restart. <br />
+          <em>Should you stay with your first choice, or switch?</e>
+        </p>
       </div>
     </div>
 
     <!-- Main -->
     <main>
-      <!-- Simulation -->
-      <section>
-        <h3 class="gameResult" id="winResult">You Win!</h3>
-        <h3 class="gameResult" id="loseResult">You Lose.</h3>
-        <div id="simulation"></div>
+      <!-- Game -->
+      <section class="center width-40 main-container">
+        <!-- Results -->
+        <div>
+          <h3 class="gameResult" id="winResult">You Win!</h3>
+          <h3 class="gameResult" id="loseResult">You Lose.</h3>
+        </div>
 
+        <!-- Doors -->
+        <div id="gameSimulation"></div>
+
+        <!-- Game Buttons -->
         <div id="btn">
           <button id="switch">Switch</button>
           <button id="keep">Keep</button>
           <button id="play-again">Play Again</button>
         </div>
 
+        <!-- Stats -->
         <div class="displayStats"></div>
-        <button class="resetStats">Reset Stats</button>
       </section>
+
     </main>
 
     <script src="script.js"></script>

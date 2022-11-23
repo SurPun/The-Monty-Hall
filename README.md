@@ -17,7 +17,7 @@ Statistically the best option is to switch doors.
 
 As a user, I want to be able to:
 
-- [ ] See instructions
+- [x] See instructions
 - [ ] Switch between game mode and simulation mode
 - [x] Select a door
 - [x] Keep or switch my choice
