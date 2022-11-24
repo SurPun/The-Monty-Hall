@@ -107,6 +107,7 @@ function setup() {
 function reveal() {
   let pickedDoor = doors[this.index];
   this.style.backgroundColor = "skyblue";
+
   // this.innerHTML = this.innerText;
 
   const options = [];
@@ -119,6 +120,7 @@ function reveal() {
   }
 
   doors[options[Math.floor(Math.random() * options.length)]].innerHTML = "🐐";
+
   // console.log(options);
 
   // Display buttons ---
@@ -279,7 +281,11 @@ function reveal() {
   });
 
   console.log(pickedDoor.innerText);
-}
 
+  // Remove click event on doors after first select.
+  doors[0].style.pointerEvents = "none";
+  doors[1].style.pointerEvents = "none";
+  doors[2].style.pointerEvents = "none";
+}
 /* --------------------------------------------------------------------------------- */
 setup();
