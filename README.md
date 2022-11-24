@@ -10,8 +10,8 @@ Statistically the best option is to switch doors.
 - [x] Convince yourself that Vos Savant was correct.
 - [x] Design and write software that will run sample games employing either the stick or switch strategy.
 - [x] Put the code in a public GitHub repository
-- [ ] Use your software to show that switching doors is statistically the best option.
-- [ ] The elegance of the output is not important so long as the program can be used to prove the point.
+- [x] Use your software to show that switching doors is statistically the best option.
+- [x] The elegance of the output is not important so long as the program can be used to prove the point.
 
 ## User Stories
 
@@ -22,4 +22,4 @@ As a user, I want to be able to:
 - [x] Select a door
 - [x] Keep or switch my choice
 - [ ] Run simulation for n number of times for keep/switch choice selection
-- [ ] See the proof that switching doors is statistically the best option
+- [x] See the proof that switching doors is statistically the best option

@@ -25,6 +25,13 @@ body {
   height: auto;
 }
 
+.responsive-sml {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 10px;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: auto auto;
@@ -226,12 +233,20 @@ body {
 }
 
 /* The Problem Section */
-.explaination-container {
-  background-color: red;
+.explaination-container h2 {
+  border: black solid;
+  border-radius: 20px;
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
 }
 
 .explaination-container h3 {
+  border: black solid;
+  border-radius: 20px;
   text-align: center;
+  margin: 20px;
+  padding: 10px;
 }
 
 .the-problem {
@@ -253,3 +268,56 @@ body {
 }
 
 /*  WHat is the monty Hall Problem */
+.the-problem-door {
+  margin: auto;
+  padding-left: 20px;
+}
+
+.the-problem-door ul {
+  padding-top: 15px;
+}
+
+/* Explaination */
+.explaination-text {
+  padding: 20px;
+  text-align: justify;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Table */
+.table-text {
+  padding: 20px;
+  text-align: justify;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 200%;
+}
+
+.table-text h4 {
+  font-size: 20px;
+}
+
+table,
+td,
+th {
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 15px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding-top: 2vw;
+  border-top: 1px solid silver;
+}
