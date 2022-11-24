@@ -13,7 +13,6 @@
       <button id="modalBtn">Instructions</button>
       <h1>The Monty Hall Problem</h1>
       <button class="resetStats">Reset Stats</button>
-
     </header>
 
     <!-- Modal -->
@@ -32,7 +31,7 @@
           Choose your options and click keep or switch button.<br />
           I will then reveal the location of the car. <br />
           Click on play again button to restart. <br />
-          <em>Should you stay with your first choice, or switch?</e>
+          <em>Should you stay with your first choice, or switch?</em>
         </p>
       </div>
     </div>
@@ -40,12 +39,15 @@
     <!-- Main -->
     <main>
       <!-- Game -->
-      <section class="center width-40 main-container">
+      <section class="game-container center width-40">
         <!-- Results -->
         <div>
-          <h3 class="gameResult" id="winResult">You Win!</h3>
-          <h3 class="gameResult" id="loseResult">You Lose.</h3>
+          <h2 class="gameResult" id="winResult">Congratulations, You Win!</h2>
+          <h2 class="gameResult" id="loseResult">Sorry, You Lose.</h2>
         </div>
+
+        <!-- Game Steps -->
+        <h3 id="steps">Please Select a Door</h3>
 
         <!-- Doors -->
         <div id="gameSimulation"></div>
@@ -61,7 +63,193 @@
         <div class="displayStats"></div>
       </section>
 
+      <!-- Monty Hall Explaination -->
+      <section class="explaination-container center">
+        <!-- The Problem -->
+        <h3>The Problem</h3>
+        <div class="the-problem grid-container width-50">
+          <img
+            src="./images/lets-make-a-deal.jpg"
+            alt="image of lets make a deal tv show"
+            id="deal-poster"
+          />
+
+          <p>
+            The Monty Hall problem has confused people for decades. In the game
+            show, Lets Make a Deal, Monty Hall asks you to guess which closed
+            door a prize is behind. The answer is so puzzling that people often
+            refuse to accept it!
+          </p>
+        </div>
+
+        <!-- What is the Monty Hall Problem -->
+        <h3>What is the Monty Hall Problem?</h3>
+
+        <div class="the-problem grid-container width-50">
+          <img src="./images/mh-doors.png" alt="3 doors" class="responsive" />
+          <ul>
+            <li>Monty Hall asks you to choose one of three doors.</li>
+
+            <li>
+              One of the doors hides a prize and the other two doors have no
+              prize.
+            </li>
+
+            <li>
+              You state out loud which door you pick, but you dont open it
+              rightaway.
+            </li>
+          </ul>
+        </div>
+
+        <div class="the-problem grid-container width-50">
+          <img
+            src="./images/mh-doors2.png"
+            alt="door with a goat"
+            class="responsive"
+          />
+          <ul>
+            <li>
+              Monty opens one of the other two doors, and there is no prize
+              behind it.
+            </li>
+
+            <li>
+              At this moment, there are two closed doors, one of which you
+              picked.
+            </li>
+
+            <li>
+              The prize is behind one of the closed doors, but you dont know
+              which one.
+            </li>
+            <li>Monty asks you, “Do you want to switch doors?”</li>
+          </ul>
+        </div>
+
+        <div>
+          <p>
+            The majority of people assume that both doors are equally like to
+            have the prize. It appears like the door you chose has a 50/50
+            chance. Because there is no perceived reason to change, most stick
+            with their initial choice.
+          </p>
+
+          <p>
+            It turns out that there are only nine different combinations of
+            choices and outcomes. Therefore, I can just show them all to you and
+            we calculate the percentage for each outcome.
+          </p>
+        </div>
+
+        <div>
+          <table>
+            <tr>
+              <th>You Pick</th>
+              <th>Prize Door</th>
+              <th>Don't Switch</th>
+              <th>Switch</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>1</td>
+              <td>Win</td>
+              <td>Lose</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>Lose</td>
+              <td>Win</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>3</td>
+              <td>Lose</td>
+              <td>Win</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>1</td>
+              <td>Lose</td>
+              <td>Win</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>2</td>
+              <td>Win</td>
+              <td>Lose</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>3</td>
+              <td>Lose</td>
+              <td>Win</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>1</td>
+              <td>Lose</td>
+              <td>Win</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>2</td>
+              <td>Lose</td>
+              <td>Win</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>3</td>
+              <td>Win</td>
+              <td>Lose</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td style="color: red; font-weight: bold">3 Wins (33%)</td>
+              <td style="color: green; font-weight: bold">6 Wins(66%)</td>
+            </tr>
+          </table>
+        </div>
+
+        <div>
+          <p>
+            Heres how you read the table of outcomes for the Monty Hall problem.
+            Each row shows a different combination of initial door choice, where
+            the prize is located, and the outcomes for when you “Dont Switch”
+            and “Switch.” Keep in mind that if your initial choice is incorrect,
+            Monty will open the remaining door that does not have the prize.
+          </p>
+
+          <p>
+            The first row shows the scenario where you pick door 1 initially and
+            the prize is behind door 1. Because neither closed door has the
+            prize, Monty is free to open either and the result is the same. For
+            this scenario, if you switch you lose; or, if you stick with your
+            original choice, you win.
+          </p>
+
+          <p>
+            For the second row, you pick door 1 and the prize is behind door 2.
+            Monty can only open door 3 because otherwise he reveals the prize
+            behind door 2. If you switch from door 1 to door 2, you win. If you
+            stay with door 1, you lose. The table shows all of the potential
+            situations. We just need to count up the number of wins for each
+            door strategy. The final row shows the total wins and it confirms
+            that you win twice as often when you take up Monty on his offer to
+            switch doors.
+          </p>
+        </div>
+      </section>
     </main>
+
+    <img
+      src="./images/monty-hall-problem.jpeg"
+      alt="monty hall problem"
+      class="responsive"
+    />
+    <footer></footer>
 
     <script src="script.js"></script>
   </body>

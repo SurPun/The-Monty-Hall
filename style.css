@@ -19,10 +19,26 @@ body {
 }
 
 /* Reusable CSS */
+.responsive {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+}
+
 .center {
   max-width: 60rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+.width-50 {
+  max-width: 50rem;
 }
 
 .width-40 {
@@ -106,7 +122,7 @@ body {
 }
 
 /* Main App */
-.main-container {
+.game-container {
   margin-top: 20px;
   padding: 0 20px 20px 20px;
 }
@@ -194,7 +210,7 @@ body {
 }
 
 #winResult {
-  color: green;
+  color: rgb(68, 204, 68);
   display: none;
 }
 
@@ -202,3 +218,38 @@ body {
   color: red;
   display: none;
 }
+
+#steps {
+  text-align: center;
+  font-size: 25px;
+  color: skyblue;
+}
+
+/* The Problem Section */
+.explaination-container {
+  background-color: red;
+}
+
+.explaination-container h3 {
+  text-align: center;
+}
+
+.the-problem {
+  text-align: justify;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.the-problem p {
+  margin: auto;
+  padding-left: 20px;
+}
+
+#deal-poster {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 20px;
+}
+
+/*  WHat is the monty Hall Problem */

@@ -7,6 +7,7 @@ const displayStats = document.querySelector(".displayStats");
 const resetStats = document.querySelector(".resetStats");
 const winResult = document.getElementById("winResult");
 const loseResult = document.getElementById("loseResult");
+const steps = document.getElementById("steps");
 
 resetStats.addEventListener("click", handleClickStats);
 function handleClickStats() {
@@ -107,7 +108,6 @@ function setup() {
 function reveal() {
   let pickedDoor = doors[this.index];
   this.style.backgroundColor = "skyblue";
-
   // this.innerHTML = this.innerText;
 
   const options = [];
@@ -120,11 +120,13 @@ function reveal() {
   }
 
   doors[options[Math.floor(Math.random() * options.length)]].innerHTML = "🐐";
-
   // console.log(options);
 
   // Display buttons ---
   btn.style.display = "block";
+
+  // Game steps
+  steps.innerHTML = "Would you like to switch or keep your door?";
 
   // Switch Function ---------------------------
   switchBtn.addEventListener("click", function () {
@@ -138,8 +140,9 @@ function reveal() {
         }
       });
 
-      // Reveal Result
+      // Reveal Result and hide game steps
       winResult.style.display = "block";
+      steps.innerHTML = "";
 
       // Hide switch/keep buttons ---
       switchBtn.style.display = "none";
@@ -173,8 +176,9 @@ function reveal() {
         }
       });
 
-      // Reveal Result
+      // Reveal Result and hide game steps
       loseResult.style.display = "block";
+      steps.innerHTML = "";
 
       // Hide switch/keep buttons ---
       switchBtn.style.display = "none";
@@ -213,8 +217,9 @@ function reveal() {
         }
       });
 
-      // Reveal Result
+      // Reveal Result and hide game steps
       winResult.style.display = "block";
+      steps.innerHTML = "";
 
       // Hide switch/keep buttons ---
       switchBtn.style.display = "none";
@@ -248,8 +253,9 @@ function reveal() {
         }
       });
 
-      // Reveal Result
+      // Reveal Result and hide game steps
       loseResult.style.display = "block";
+      steps.innerHTML = "";
 
       // Hide switch/keep buttons ---
       switchBtn.style.display = "none";
